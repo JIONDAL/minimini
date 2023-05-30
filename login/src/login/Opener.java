@@ -128,9 +128,6 @@ public class Opener {
 		
 		try {
 			myPageForm = loader.load();
-//			myPageFormController myPageFormCon = loader.getController();
-//			myPageFormCon.setMyPageStage(myPageStage);
-//			myPageFormCon.setMyPageForm(myPageForm);
 			
 			myPageStage.setScene(new Scene(myPageForm));
 			myPageStage.setTitle("마이페이지");
@@ -159,4 +156,94 @@ public class Opener {
 		}
 		
 	}
+	
+	private Stage checkPwStage = new Stage();;
+	private Parent checkPwForm;
+	
+	public void checkPwFormOpen() {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("checkPwForm.fxml"));
+		
+		try {
+			checkPwForm = loader.load();
+			checkPwFormController checkPwFormCon = loader.getController();
+			checkPwFormCon.setcheckPwStage(checkPwStage);
+			
+			checkPwStage.setScene(new Scene(checkPwForm));
+			checkPwStage.setTitle("비밀번호 확인");
+			checkPwStage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void changeInfoFormOpen() {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("changeInfoForm.fxml"));
+		//비밀번호 확인 창(기존창)에서 확인버튼 누르면 회원정보 수정창 열기
+		Parent changeInfoForm;
+		try {
+			changeInfoForm = loader.load();
+			changeInfoFormController changeInfoCon = loader.getController();
+			changeInfoCon.setChangeInfoForm(changeInfoForm);
+			changeInfoCon.setChangeInfoStage(checkPwStage);
+			
+			checkPwStage.setScene(new Scene(changeInfoForm));
+			checkPwStage.setTitle("회원 정보 수정");
+			checkPwStage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	private Parent activityForm;
+	private Stage activityStage;
+	public void activityFormOpen() {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("activityForm.fxml"));
+		activityStage = new Stage();
+			
+		try {
+			activityForm = loader.load();
+			activityStage.setScene(new Scene(activityForm));
+			activityStage.setTitle("활동내역");
+			activityStage.show();
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	private Parent costViewForm;
+	private Stage costViewStage = new Stage();
+	public void costViewFormOpen() {//월별 관리비 조회 창 뜨게 (기본)
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("costViewForm.fxml"));
+		try {
+			costViewForm = loader.load();
+			costViewFormController costViewFormCon = loader.getController();
+			costViewFormCon.setCostViewStage(costViewStage);
+			costViewStage.setScene(new Scene(costViewForm));
+			costViewStage.setTitle("월별 관리비 조회");
+			costViewStage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	private Parent costViewForm2;
+	public void costViewForm2Open() {//이번달 관리비 조회 창 뜨게 (변경)
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("costViewForm2.fxml"));
+		try {
+			costViewForm2 = loader.load();
+			costViewForm2Controller costViewForm2Con = loader.getController();
+			costViewForm2Con.setCostViewStage(costViewStage);
+			costViewStage.setScene(new Scene(costViewForm2));
+			costViewStage.setTitle("이번달 관리비 조회");
+			costViewStage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	} 
 }

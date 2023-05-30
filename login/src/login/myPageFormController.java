@@ -3,18 +3,22 @@ package login;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 
 public class myPageFormController implements Initializable {
 	private Stage myPageStage;
 	private Parent myPageForm;
+	private myPageFormService myPageService;
+
+	private Opener opener = new Opener();
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-
+		myPageService = new myPageFormService();
 	}
 
 	public void setMyPageStage(Stage myPageStage) {
@@ -24,6 +28,20 @@ public class myPageFormController implements Initializable {
 	public void setMyPageForm(Parent myPageForm) {
 		this.myPageForm = myPageForm;
 	}
+
+	// 마이페이지에서 정보수정 버튼 누르면 현재비밀번호 입력하세요 새창 뜨게
+	public void changeInfoProc() {
+		opener.checkPwFormOpen();
+	}
 	
-	//마이페이지에서 활동내역/관리비조회/알림내역 등 누르면 실행하는 메서드 작성 
+	//마이페이지에서 활동내역 누르면 활동내역 새창 뜨게
+	public void activityProc() {
+		opener.activityFormOpen();
+	}
+	
+	//마이페이지에서 관리비 조회 누르면 새창 뜨게
+	public void costViewProc() {
+		opener.costViewFormOpen();
+	}
+
 }

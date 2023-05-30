@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="667.0" prefWidth="375.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.changeInfoFormController">
+   <children>
+      <VBox prefHeight="590.0" prefWidth="375.0" spacing="40.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="156.0" prefWidth="375.0" spacing="20.0">
+               <children>
+                  <Label prefHeight="0.0" text="회원 정보 수정">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+               <children>
+                  <Label prefHeight="0.0" prefWidth="110.0" text="이름 수정">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nameFld" prefHeight="30.0" prefWidth="150.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+               <children>
+                  <Label prefHeight="0.0" prefWidth="110.0" text="휴대폰 번호 수정">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="phoneFld" prefHeight="30.0" prefWidth="150.0" promptText="하이픈(-)을 사용하여 입력하세요" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+               <children>
+                  <Label prefHeight="0.0" prefWidth="110.0" text="비밀번호 수정">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="pwFld" prefHeight="30.0" prefWidth="150.0" promptText="10자리 이하로 입력하세요" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+               <children>
+                  <Label prefHeight="0.0" prefWidth="110.0" text="비밀번호 확인">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="confirmFld" prefHeight="30.0" prefWidth="150.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#changeProc" prefHeight="40.0" prefWidth="120.0" text="수정">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#cancleProc" prefHeight="40.0" prefWidth="120.0" text="다시 입력">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>

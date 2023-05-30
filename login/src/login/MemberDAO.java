@@ -12,7 +12,7 @@ public class MemberDAO {
 	private Connection con;
 
 	public MemberDAO() {
-		String url = "jdbc:oracle:thin:@192.168.219.126:1521:xe";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		String user = "oracle";
 		String password = "oracle";
 
@@ -187,4 +187,24 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 	}
+	
+	public int update(String id, String name, String phone, String pw) {
+		PreparedStatement ps = null;
+		int result = 0;
+		try {
+			ps = con.prepareStatement("UPDATE apt SET name=?, phone=?, pw=? WHERE id=?");
+			ps.setString(1, name);
+			ps.setString(2, phone);
+			ps.setString(3, pw);
+			ps.setString(4, id);
+			result = ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+		
+	}
+	
+
 }
