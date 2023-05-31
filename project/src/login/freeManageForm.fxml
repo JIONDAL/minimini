@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="667.0" prefWidth="375.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.boardManageFormController">
+   <children>
+      <VBox prefHeight="667.0" prefWidth="375.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="255.0" prefWidth="375.0">
+               <children>
+                  <Label text="자유 게시판">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="447.0" prefWidth="375.0">
+               <children>
+                  <TableView prefHeight="292.0" prefWidth="375.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="작성 게시글" />
+                    </columns>
+                  </TableView>
+               </children>
+            </HBox>
+            <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="146.0" prefWidth="375.0" spacing="8.0">
+               <children>
+                  <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="32.0" prefWidth="245.0" promptText="제목" />
+                  <TextArea maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="62.0" prefWidth="320.0" promptText="공지글">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TextArea>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="20.0" left="25.0" right="30.0" top="30.0" />
+               </padding>
+            </VBox>
+            <HBox alignment="TOP_CENTER" prefHeight="276.0" prefWidth="375.0" spacing="15.0">
+               <children>
+                  <Button mnemonicParsing="false" text="등   록" />
+                  <Button mnemonicParsing="false" text="수   정" />
+                  <Button mnemonicParsing="false" text="삭   제" />
+               </children>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</FlowPane>
